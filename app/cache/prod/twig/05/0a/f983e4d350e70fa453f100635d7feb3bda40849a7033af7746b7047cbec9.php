@@ -57,10 +57,12 @@ class __TwigTemplate_050af983e4d350e70fa453f100635d7feb3bda40849a7033af7746b7047
 
                             ";
         // line 13
-        if ($this->getContext($context, "error")) {
+        if (isset($context["error"])) { $_error_ = $context["error"]; } else { $_error_ = null; }
+        if ($_error_) {
             // line 14
             echo "                            <div class=\"alert alert-error\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "error"), "message", array()), "html", null, true);
+            if (isset($context["error"])) { $_error_ = $context["error"]; } else { $_error_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_error_, "message", array()), "html", null, true);
             echo "</div>
                             ";
         }
@@ -70,7 +72,8 @@ class __TwigTemplate_050af983e4d350e70fa453f100635d7feb3bda40849a7033af7746b7047
                                 <div class=\"form-group\">
                                     <input class=\"form-control\" id=\"username\" name=\"_username\" value=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->getContext($context, "last_username"), "html", null, true);
+        if (isset($context["last_username"])) { $_last_username_ = $context["last_username"]; } else { $_last_username_ = null; }
+        echo twig_escape_filter($this->env, $_last_username_, "html", null, true);
         echo "\"  type=\"username\" autofocus>
                                 </div>
                                 <div class=\"form-group\">
@@ -105,6 +108,6 @@ class __TwigTemplate_050af983e4d350e70fa453f100635d7feb3bda40849a7033af7746b7047
 
     public function getDebugInfo()
     {
-        return array (  73 => 19,  68 => 16,  62 => 14,  60 => 13,  55 => 11,  43 => 3,  37 => 2,  11 => 1,);
+        return array (  75 => 19,  70 => 16,  63 => 14,  60 => 13,  55 => 11,  43 => 3,  37 => 2,  11 => 1,);
     }
 }

@@ -67,80 +67,95 @@ class __TwigTemplate_9b889565b8f543fd387582defa3293af51afdf620adff535a0b4c1f2fb3
        <div class=\"modal-body\">
        ";
         // line 24
-        $this->env->getExtension('form')->renderer->setTheme($this->getContext($context, "form"), array(0 => "::formLayout.html.twig"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        $this->env->getExtension('form')->renderer->setTheme($_form_, array(0 => "::formLayout.html.twig"));
         // line 25
         echo "     
         <form method=\"post\" ";
         // line 26
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'enctype');
         echo ">
             
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 29
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "rsocial", array()), 'label', array("label" => "Raison Social:"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "rsocial", array()), 'label', array("label" => "Raison Social:"));
         echo "</div>
         <div class=\"col-sm-6\">  ";
         // line 30
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "rsocial", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "rsocial", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
         echo "</div>
            </div><br/>  
            
         <div class=\"row\">
         <div class=\"col-sm-3\">";
         // line 34
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "adr", array()), 'label', array("label" => "Adresse :  :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "adr", array()), 'label', array("label" => "Adresse :  :"));
         echo "</div>
         <div class=\"col-sm-6\"> ";
         // line 35
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "adr", array()), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "adr", array()), 'widget');
         echo "</div>
         </div></br>
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 38
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "tel", array()), 'label', array("label" => "Téléphone :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "tel", array()), 'label', array("label" => "Téléphone :"));
         echo "</div>
         <div class=\"col-sm-6\">  ";
         // line 39
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "tel", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "tel", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
         echo "</div>
         </div><br/>
 
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 43
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "email", array()), 'label', array("label" => "Email : :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "email", array()), 'label', array("label" => "Email : :"));
         echo "</div>
         <div class=\"col-sm-6\">  ";
         // line 44
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "email", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "email", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
         echo "</div>
         </div><br/>
         
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 48
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "act", array()), 'label', array("label" => "Activité :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "act", array()), 'label', array("label" => "Activité :"));
         echo "</div>
         <div class=\"col-sm-6\">  ";
         // line 49
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "act", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "act", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
         echo "</div>
         </div><br/>
         
            <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 53
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "rep", array()), 'label', array("label" => "Choisir un réprésentant :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "rep", array()), 'label', array("label" => "Choisir un réprésentant :"));
         echo "</div>
         <div class=\"col-sm-6\">  ";
         // line 54
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "rep", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "rep", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
         echo "</div>
          ";
         // line 55
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "rep", array()), 'errors');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "rep", array()), 'errors');
         echo "
            </div>
    
@@ -154,7 +169,8 @@ class __TwigTemplate_9b889565b8f543fd387582defa3293af51afdf620adff535a0b4c1f2fb3
        </div>
        ";
         // line 63
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'rest');
         echo " 
          </form>
      </div><!-- /.modal-content -->
@@ -175,6 +191,6 @@ class __TwigTemplate_9b889565b8f543fd387582defa3293af51afdf620adff535a0b4c1f2fb3
 
     public function getDebugInfo()
     {
-        return array (  157 => 63,  152 => 61,  143 => 55,  139 => 54,  135 => 53,  128 => 49,  124 => 48,  117 => 44,  113 => 43,  106 => 39,  102 => 38,  96 => 35,  92 => 34,  85 => 30,  81 => 29,  75 => 26,  72 => 25,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
+        return array (  172 => 63,  167 => 61,  157 => 55,  152 => 54,  147 => 53,  139 => 49,  134 => 48,  126 => 44,  121 => 43,  113 => 39,  108 => 38,  101 => 35,  96 => 34,  88 => 30,  83 => 29,  76 => 26,  73 => 25,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
     }
 }

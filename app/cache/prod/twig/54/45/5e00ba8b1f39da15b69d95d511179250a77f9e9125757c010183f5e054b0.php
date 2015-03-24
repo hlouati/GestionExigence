@@ -28,15 +28,18 @@ class __TwigTemplate_54455e00ba8b1f39da15b69d95d511179250a77f9e9125757c010183f5e
         echo "    <div class=\"form_row\">
         ";
         // line 4
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'label');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'label');
         echo "
         ";
         // line 5
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'errors');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'errors');
         echo "
         ";
         // line 6
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'widget');
         echo "
     </div>
 ";
@@ -50,6 +53,6 @@ class __TwigTemplate_54455e00ba8b1f39da15b69d95d511179250a77f9e9125757c010183f5e
 
     public function getDebugInfo()
     {
-        return array (  39 => 6,  35 => 5,  31 => 4,  28 => 3,  26 => 2,  20 => 1,);
+        return array (  41 => 6,  36 => 5,  31 => 4,  28 => 3,  26 => 2,  20 => 1,);
     }
 }

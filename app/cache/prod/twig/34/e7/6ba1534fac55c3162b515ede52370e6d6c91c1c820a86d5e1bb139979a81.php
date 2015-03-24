@@ -64,14 +64,16 @@ class __TwigTemplate_34e76ba1534fac55c3162b515ede52370e6d6c91c1c820a86d5e1bb1399
     <tbody>
         ";
         // line 28
+        if (isset($context["client"])) { $_client_ = $context["client"]; } else { $_client_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "client"));
+        $context['_seq'] = twig_ensure_traversable($_client_);
         foreach ($context['_seq'] as $context["_key"] => $context["c"]) {
             // line 29
             echo "      
         ";
             // line 30
-            if ((null === $this->getAttribute($context["c"], "adr", array()))) {
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            if ((null === $this->getAttribute($_c_, "adr", array()))) {
                 echo "<div class=\"alert alert-warning\" role=\"alert\">Vous avez pas encore des clients pensez à ajouter</div>";
             }
             echo "    
@@ -82,32 +84,39 @@ class __TwigTemplate_34e76ba1534fac55c3162b515ede52370e6d6c91c1c820a86d5e1bb1399
         <td>
           <span class=\"name\">";
             // line 36
-            echo twig_escape_filter($this->env, $this->getAttribute($context["c"], "rsocial", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_c_, "rsocial", array()), "html", null, true);
             echo "</span>
         </td>
         <td class=\"hidden-phone\">";
             // line 38
-            echo twig_escape_filter($this->env, $this->getAttribute($context["c"], "act", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_c_, "act", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">
           ";
             // line 40
-            echo twig_escape_filter($this->env, $this->getAttribute($context["c"], "adr", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_c_, "adr", array()), "html", null, true);
             echo "
         </td>
         <td class=\"hidden-phone\">";
             // line 42
-            echo twig_escape_filter($this->env, $this->getAttribute($context["c"], "tel", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_c_, "tel", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">";
             // line 43
-            echo twig_escape_filter($this->env, $this->getAttribute($context["c"], "email", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_c_, "email", array()), "html", null, true);
             echo "</td>
          <td class=\"hidden-phone\">";
             // line 44
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["c"], "rep", array()), "getNom", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_c_, "rep", array()), "getNom", array()), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["c"], "rep", array()), "getPrenom", array()), "html", null, true);
+            if (isset($context["c"])) { $_c_ = $context["c"]; } else { $_c_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_c_, "rep", array()), "getPrenom", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">
           <div class=\"btn-group\">
@@ -184,6 +193,6 @@ class __TwigTemplate_34e76ba1534fac55c3162b515ede52370e6d6c91c1c820a86d5e1bb1399
 
     public function getDebugInfo()
     {
-        return array (  172 => 66,  169 => 65,  141 => 67,  139 => 65,  133 => 61,  108 => 44,  104 => 43,  100 => 42,  95 => 40,  90 => 38,  85 => 36,  74 => 30,  71 => 29,  67 => 28,  47 => 10,  44 => 9,  35 => 4,  32 => 3,  29 => 2,  20 => 1,);
+        return array (  181 => 66,  178 => 65,  150 => 67,  148 => 65,  142 => 61,  115 => 44,  110 => 43,  105 => 42,  99 => 40,  93 => 38,  87 => 36,  75 => 30,  72 => 29,  67 => 28,  47 => 10,  44 => 9,  35 => 4,  32 => 3,  29 => 2,  20 => 1,);
     }
 }

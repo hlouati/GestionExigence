@@ -67,53 +67,63 @@ class __TwigTemplate_70abca37d6f7f7bbf869362cb2e389843aefb947e20edc8ec2969a18119
        <div class=\"modal-body\">
        ";
         // line 24
-        $this->env->getExtension('form')->renderer->setTheme($this->getContext($context, "form"), array(0 => "::formLayout.html.twig"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        $this->env->getExtension('form')->renderer->setTheme($_form_, array(0 => "::formLayout.html.twig"));
         // line 25
         echo "     
         <form method=\"post\" ";
         // line 26
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'enctype');
         echo ">
         <div class=\"row\">
         <div class=\"col-sm-3\">";
         // line 28
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom", array()), 'label', array("label" => "Titre :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "nom", array()), 'label', array("label" => "Titre :"));
         echo "</div>
         <div class=\"col-sm-6\"> ";
         // line 29
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom", array()), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "nom", array()), 'widget');
         echo "</div>
         </div></br>
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 32
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description", array()), 'label', array("label" => "Déscription :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "description", array()), 'label', array("label" => "Déscription :"));
         echo "</div>
         <div class=\"col-sm-6\">";
         // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description", array()), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "description", array()), 'widget');
         echo "</div>
         </div>
         </br>
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 37
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "user", array()), 'label', array("label" => "Choisir un chef de projet :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "user", array()), 'label', array("label" => "Choisir un chef de projet :"));
         echo "</div>
         <div class=\"col-sm-6\">";
         // line 38
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "user", array()), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "user", array()), 'widget');
         echo "</div>
         </div>
         </br>
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 42
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "client", array()), 'label', array("label" => "Choisir Client :"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "client", array()), 'label', array("label" => "Choisir Client :"));
         echo "</div>
         <div class=\"col-sm-6\">";
         // line 43
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "client", array()), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "client", array()), 'widget');
         echo "</div>
         </div>
      
@@ -128,7 +138,8 @@ class __TwigTemplate_70abca37d6f7f7bbf869362cb2e389843aefb947e20edc8ec2969a18119
        </div>
        ";
         // line 52
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'rest');
         echo " 
          </form>
      </div><!-- /.modal-content -->
@@ -149,6 +160,6 @@ class __TwigTemplate_70abca37d6f7f7bbf869362cb2e389843aefb947e20edc8ec2969a18119
 
     public function getDebugInfo()
     {
-        return array (  131 => 52,  126 => 50,  116 => 43,  112 => 42,  105 => 38,  101 => 37,  94 => 33,  90 => 32,  84 => 29,  80 => 28,  75 => 26,  72 => 25,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
+        return array (  141 => 52,  136 => 50,  125 => 43,  120 => 42,  112 => 38,  107 => 37,  99 => 33,  94 => 32,  87 => 29,  82 => 28,  76 => 26,  73 => 25,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
     }
 }

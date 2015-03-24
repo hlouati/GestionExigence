@@ -73,11 +73,13 @@ class __TwigTemplate_04f483bc6c355c92734f3015a0cea94663a65e66e2863334f3455fb4acd
         
             <a href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Projet_interCl", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
+            if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Projet_interCl", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
             echo "\"><span>Client</span></a>             
             <a href=\"";
             // line 28
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Projet_interCap", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
+            if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Projet_interCap", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
             echo "\">
                 <span>Capgemeni</span></a>";
         }
@@ -98,23 +100,27 @@ class __TwigTemplate_04f483bc6c355c92734f3015a0cea94663a65e66e2863334f3455fb4acd
     
     ";
         // line 43
+        if (isset($context["u"])) { $_u_ = $context["u"]; } else { $_u_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "u"), "user", array()));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($_u_, "user", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
             // line 44
             echo "        <tr>
  
         <td class=\"hidden-phone\">";
             // line 46
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "nom", array()), "html", null, true);
+            if (isset($context["user"])) { $_user_ = $context["user"]; } else { $_user_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_user_, "nom", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">";
             // line 47
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "prenom", array()), "html", null, true);
+            if (isset($context["user"])) { $_user_ = $context["user"]; } else { $_user_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_user_, "prenom", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">";
             // line 48
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "Roles", array()), 0, array(), "array"), "html", null, true);
+            if (isset($context["user"])) { $_user_ = $context["user"]; } else { $_user_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_user_, "Roles", array()), 0, array(), "array"), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">
               <div class=\"btn-group\">
@@ -177,6 +183,6 @@ class __TwigTemplate_04f483bc6c355c92734f3015a0cea94663a65e66e2863334f3455fb4acd
 
     public function getDebugInfo()
     {
-        return array (  156 => 79,  141 => 66,  117 => 48,  113 => 47,  109 => 46,  105 => 44,  101 => 43,  85 => 29,  80 => 28,  76 => 27,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
+        return array (  162 => 79,  147 => 66,  122 => 48,  117 => 47,  112 => 46,  108 => 44,  103 => 43,  87 => 29,  81 => 28,  76 => 27,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
     }
 }

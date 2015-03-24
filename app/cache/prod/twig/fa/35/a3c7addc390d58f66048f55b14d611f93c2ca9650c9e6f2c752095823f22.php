@@ -49,11 +49,14 @@ class __TwigTemplate_fa35a3c7addc390d58f66048f55b14d611f93c2ca9650c9e6f2c7520958
     {
         // line 8
         echo "    ";
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "exception"), "message", array()), "html", null, true);
+        if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_exception_, "message", array()), "html", null, true);
         echo " (";
-        echo twig_escape_filter($this->env, $this->getContext($context, "status_code"), "html", null, true);
+        if (isset($context["status_code"])) { $_status_code_ = $context["status_code"]; } else { $_status_code_ = null; }
+        echo twig_escape_filter($this->env, $_status_code_, "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "status_text"), "html", null, true);
+        if (isset($context["status_text"])) { $_status_text_ = $context["status_text"]; } else { $_status_text_ = null; }
+        echo twig_escape_filter($this->env, $_status_text_, "html", null, true);
         echo ")
 ";
     }
@@ -78,6 +81,6 @@ class __TwigTemplate_fa35a3c7addc390d58f66048f55b14d611f93c2ca9650c9e6f2c7520958
 
     public function getDebugInfo()
     {
-        return array (  65 => 12,  62 => 11,  51 => 8,  48 => 7,  41 => 4,  38 => 3,  11 => 1,);
+        return array (  68 => 12,  65 => 11,  51 => 8,  48 => 7,  41 => 4,  38 => 3,  11 => 1,);
     }
 }

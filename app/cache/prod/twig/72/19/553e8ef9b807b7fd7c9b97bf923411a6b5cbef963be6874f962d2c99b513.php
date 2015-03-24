@@ -19,22 +19,26 @@ class __TwigTemplate_7219553e8ef9b807b7fd7c9b97bf923411a6b5cbef963be6874f962d2c9
         echo "<ol class=\"traces logs\">
     ";
         // line 2
+        if (isset($context["logs"])) { $_logs_ = $context["logs"]; } else { $_logs_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "logs"));
+        $context['_seq'] = twig_ensure_traversable($_logs_);
         foreach ($context['_seq'] as $context["_key"] => $context["log"]) {
             // line 3
             echo "        <li";
-            if (($this->getAttribute($context["log"], "priority", array()) >= 400)) {
+            if (isset($context["log"])) { $_log_ = $context["log"]; } else { $_log_ = null; }
+            if (($this->getAttribute($_log_, "priority", array()) >= 400)) {
                 echo " class=\"error\"";
-            } elseif (($this->getAttribute($context["log"], "priority", array()) >= 300)) {
+            } elseif (($this->getAttribute($_log_, "priority", array()) >= 300)) {
                 echo " class=\"warning\"";
             }
             echo ">
             ";
             // line 4
-            echo twig_escape_filter($this->env, $this->getAttribute($context["log"], "priorityName", array()), "html", null, true);
+            if (isset($context["log"])) { $_log_ = $context["log"]; } else { $_log_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_log_, "priorityName", array()), "html", null, true);
             echo " - ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["log"], "message", array()), "html", null, true);
+            if (isset($context["log"])) { $_log_ = $context["log"]; } else { $_log_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_log_, "message", array()), "html", null, true);
             echo "
         </li>
     ";
@@ -59,6 +63,6 @@ class __TwigTemplate_7219553e8ef9b807b7fd7c9b97bf923411a6b5cbef963be6874f962d2c9
 
     public function getDebugInfo()
     {
-        return array (  46 => 7,  35 => 4,  26 => 3,  22 => 2,  19 => 1,);
+        return array (  50 => 7,  37 => 4,  27 => 3,  22 => 2,  19 => 1,);
     }
 }

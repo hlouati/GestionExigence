@@ -33,7 +33,8 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
             echo "     <br/>
             <a href=\"";
             // line 5
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Besoin_add", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
+            if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Besoin_add", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
             echo "\">
                 <span>Ajouter un nouveau besoin </span></a>
             <span class=\"glyphicon glyphicon-pencil\"></span>
@@ -60,8 +61,9 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
             <div class=\"panel-group ng-scope\" id=\"accordion\">
         ";
         // line 19
+        if (isset($context["verBesoin"])) { $_verBesoin_ = $context["verBesoin"]; } else { $_verBesoin_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "verBesoin"));
+        $context['_seq'] = twig_ensure_traversable($_verBesoin_);
         foreach ($context['_seq'] as $context["_key"] => $context["besoin"]) {
             // line 20
             echo "        
@@ -70,18 +72,21 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
                 <h4 class=\"panel-title\">
                     <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse";
             // line 24
-            echo twig_escape_filter($this->env, $this->getAttribute($context["besoin"], "id", array()), "html", null, true);
+            if (isset($context["besoin"])) { $_besoin_ = $context["besoin"]; } else { $_besoin_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_besoin_, "id", array()), "html", null, true);
             echo "\">
                         <div class=\"container\">
                             <div class=\"row\">
                                 <div class=\"col-sm-3\">";
             // line 27
-            echo twig_escape_filter($this->env, $this->getAttribute($context["besoin"], "nom", array()), "html", null, true);
+            if (isset($context["besoin"])) { $_besoin_ = $context["besoin"]; } else { $_besoin_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_besoin_, "nom", array()), "html", null, true);
             echo " </div>
                                 <div class=\"col-sm-3\"></div>
                                 <div class=\"col-sm-3\">Version <span class=\"badge\">";
             // line 29
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["besoin"], "version", array()), "count", array()), "html", null, true);
+            if (isset($context["besoin"])) { $_besoin_ = $context["besoin"]; } else { $_besoin_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_besoin_, "version", array()), "count", array()), "html", null, true);
             echo "</span> </div>
                                 <div class=\"col-sm-3\"><span class=\"label-info pull-right\">View <i class=\"fa fa-angle-double-down\"></i></span></div>
                             </div>
@@ -91,15 +96,17 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
             </div>
             <div id=\"collapse";
             // line 36
-            echo twig_escape_filter($this->env, $this->getAttribute($context["besoin"], "id", array()), "html", null, true);
+            if (isset($context["besoin"])) { $_besoin_ = $context["besoin"]; } else { $_besoin_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_besoin_, "id", array()), "html", null, true);
             echo "\" class=\"panel-collapse collapse\">
                   
          
                      
                     ";
             // line 40
+            if (isset($context["besoin"])) { $_besoin_ = $context["besoin"]; } else { $_besoin_ = null; }
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["besoin"], "version", array()));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($_besoin_, "version", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["version"]) {
                 // line 41
                 echo "                        <div class=\"panel-body\">
@@ -107,7 +114,8 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
                             
                             ";
                 // line 44
-                if (($this->getAttribute($context["version"], "curent", array()) == "true")) {
+                if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                if (($this->getAttribute($_version_, "curent", array()) == "true")) {
                     echo " 
                             <span class=\"label label-success\">Nouveau</span>
                            
@@ -119,23 +127,30 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
                 echo " 
                             ";
                 // line 48
-                echo twig_escape_filter($this->env, $this->getAttribute($context["version"], "descp", array()), "html", null, true);
+                if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                echo twig_escape_filter($this->env, $this->getAttribute($_version_, "descp", array()), "html", null, true);
                 echo "<br/><br/>Rédiger le :";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["version"], "date", array()), "d/m/y"), "html", null, true);
+                if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($_version_, "date", array()), "d/m/y"), "html", null, true);
                 echo " par <span class=\"glyphicon glyphicon-user\"></span> ";
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["version"], "redact", array()), "getNom", array()), "html", null, true);
+                if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_version_, "redact", array()), "getNom", array()), "html", null, true);
                 echo "
                             ";
                 // line 49
-                if (($this->getAttribute($context["version"], "curent", array()) == "true")) {
+                if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                if (($this->getAttribute($_version_, "curent", array()) == "true")) {
                     echo " 
                                 ";
                     // line 50
-                    if ( !(null === $this->getAttribute($context["version"], "getDoc", array()))) {
+                    if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                    if ( !(null === $this->getAttribute($_version_, "getDoc", array()))) {
                         echo "     <br/> <a href=\"";
-                        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["version"], "getDoc", array()), "getAbsolutePath", array()), "html", null, true);
+                        if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_version_, "getDoc", array()), "getAbsolutePath", array()), "html", null, true);
                         echo "\">";
-                        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["version"], "getDoc", array()), "getWebPath", array()), "html", null, true);
+                        if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_version_, "getDoc", array()), "getWebPath", array()), "html", null, true);
                         echo "</a>";
                     }
                     // line 51
@@ -144,7 +159,9 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
                     // line 52
                     if ($this->env->getExtension('security')->isGranted("ROLE_INTERCLIENT")) {
                         echo "      <a href=\"";
-                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Doc_add", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($context["version"], "id", array()))), "html", null, true);
+                        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+                        if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Doc_add", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($_version_, "id", array()))), "html", null, true);
                         echo "\">
                                        <span>Attacher un fichier</span></a>
                                    <span class=\"glyphicon glyphicon-upload\"></span>
@@ -156,7 +173,9 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
                     // line 57
                     if ($this->env->getExtension('security')->isGranted("ROLE_INTERCAP")) {
                         echo "   <a href=\"";
-                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Exigence_list", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($context["version"], "id", array()))), "html", null, true);
+                        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+                        if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Exigence_list", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($_version_, "id", array()))), "html", null, true);
                         echo "\">
                                        <span>Ajouter une exigence </span></a>
                                    <span class=\"glyphicon glyphicon-book\"></span>
@@ -170,7 +189,9 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
                         echo "   
                                   <a href=\"";
                         // line 63
-                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Vbesoin_add", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"), "idbesoin" => $this->getAttribute($this->getAttribute($context["version"], "getBesoin", array()), "getId", array()))), "html", null, true);
+                        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+                        if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Vbesoin_add", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"), "idbesoin" => $this->getAttribute($this->getAttribute($_version_, "getBesoin", array()), "getId", array()))), "html", null, true);
                         echo "\">
                                        <span>Ajouter une nouvelle version </span></a>
                                    <span class=\"glyphicon glyphicon-pencil\"></span>";
@@ -245,6 +266,6 @@ class __TwigTemplate_edd3153dbc0fc40413c533d53c8511aef02d67a6ce56a6da78931556b3a
 
     public function getDebugInfo()
     {
-        return array (  202 => 77,  192 => 72,  184 => 69,  179 => 66,  173 => 63,  169 => 62,  166 => 61,  157 => 57,  154 => 56,  145 => 52,  142 => 51,  134 => 50,  130 => 49,  122 => 48,  117 => 47,  110 => 44,  105 => 41,  101 => 40,  94 => 36,  84 => 29,  79 => 27,  73 => 24,  67 => 20,  63 => 19,  54 => 12,  51 => 11,  46 => 9,  43 => 8,  36 => 5,  31 => 4,  28 => 3,  19 => 2,);
+        return array (  223 => 77,  213 => 72,  205 => 69,  200 => 66,  192 => 63,  188 => 62,  185 => 61,  174 => 57,  171 => 56,  160 => 52,  157 => 51,  146 => 50,  141 => 49,  130 => 48,  125 => 47,  117 => 44,  112 => 41,  107 => 40,  99 => 36,  88 => 29,  82 => 27,  75 => 24,  69 => 20,  64 => 19,  55 => 12,  52 => 11,  47 => 9,  44 => 8,  36 => 5,  31 => 4,  28 => 3,  19 => 2,);
     }
 }

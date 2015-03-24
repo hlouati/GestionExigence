@@ -78,31 +78,37 @@ class __TwigTemplate_f4db1fbc1a56025328454acaba6c96066b7ca8abc60179fe052c5a8df4c
     
        ";
         // line 27
+        if (isset($context["u"])) { $_u_ = $context["u"]; } else { $_u_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "u"));
+        $context['_seq'] = twig_ensure_traversable($_u_);
         foreach ($context['_seq'] as $context["_key"] => $context["projet"]) {
             // line 28
             echo "      <tr>
         
         <td> <span class=\"name\"><a href=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Besoin_list", array("idprojet" => $this->getAttribute($context["projet"], "id", array()))), "html", null, true);
+            if (isset($context["projet"])) { $_projet_ = $context["projet"]; } else { $_projet_ = null; }
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Besoin_list", array("idprojet" => $this->getAttribute($_projet_, "id", array()))), "html", null, true);
             echo "\">   ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["projet"], "nom", array()), "html", null, true);
+            if (isset($context["projet"])) { $_projet_ = $context["projet"]; } else { $_projet_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_projet_, "nom", array()), "html", null, true);
             echo "</a></span></td>
         <td class=\"hidden-phone\">  ";
             // line 31
-            echo twig_escape_filter($this->env, $this->getAttribute($context["projet"], "description", array()), "html", null, true);
+            if (isset($context["projet"])) { $_projet_ = $context["projet"]; } else { $_projet_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_projet_, "description", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">";
             // line 32
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["projet"], "client", array()), "getRsocial", array(), "method"), "html", null, true);
+            if (isset($context["projet"])) { $_projet_ = $context["projet"]; } else { $_projet_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_projet_, "client", array()), "getRsocial", array(), "method"), "html", null, true);
             echo "</td>
        ";
             // line 33
             if ($this->env->getExtension('security')->isGranted("ROLE_CHEFPROJET")) {
                 echo "  <td class=\"hidden-phone\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Projet_inter", array("idprojet" => $this->getAttribute($context["projet"], "id", array()))), "html", null, true);
+                if (isset($context["projet"])) { $_projet_ = $context["projet"]; } else { $_projet_ = null; }
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Projet_inter", array("idprojet" => $this->getAttribute($_projet_, "id", array()))), "html", null, true);
                 echo "\">liste des intervenants</a></td>";
             }
             // line 34
@@ -163,6 +169,6 @@ class __TwigTemplate_f4db1fbc1a56025328454acaba6c96066b7ca8abc60179fe052c5a8df4c
 
     public function getDebugInfo()
     {
-        return array (  151 => 56,  148 => 55,  143 => 57,  141 => 55,  135 => 51,  127 => 48,  109 => 34,  103 => 33,  99 => 32,  95 => 31,  89 => 30,  85 => 28,  81 => 27,  74 => 22,  69 => 21,  65 => 20,  57 => 14,  54 => 13,  47 => 9,  41 => 8,  35 => 5,  32 => 4,  29 => 3,  20 => 2,);
+        return array (  157 => 56,  154 => 55,  149 => 57,  147 => 55,  141 => 51,  133 => 48,  115 => 34,  108 => 33,  103 => 32,  98 => 31,  90 => 30,  86 => 28,  81 => 27,  74 => 22,  69 => 21,  65 => 20,  57 => 14,  54 => 13,  47 => 9,  41 => 8,  35 => 5,  32 => 4,  29 => 3,  20 => 2,);
     }
 }

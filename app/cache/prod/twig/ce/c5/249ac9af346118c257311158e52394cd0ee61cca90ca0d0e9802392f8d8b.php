@@ -45,7 +45,8 @@ class __TwigTemplate_cec5249ac9af346118c257311158e52394cd0ee61cca90ca0d0e9802392
         
         <li>\t <a href=\"";
             // line 12
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Exigence_add", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "vBesoin"), "method"))), "html", null, true);
+            if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Exigence_add", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "vBesoin"), "method"))), "html", null, true);
             echo "\">
                                        <span>Ajouter une nouvelle exigence   </span></a>
                                    <span class=\"glyphicon glyphicon-pencil\"></span></a> 
@@ -53,18 +54,22 @@ class __TwigTemplate_cec5249ac9af346118c257311158e52394cd0ee61cca90ca0d0e9802392
             <ul> 
                 ";
             // line 17
+            if (isset($context["exig"])) { $_exig_ = $context["exig"]; } else { $_exig_ = null; }
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "exig"));
+            $context['_seq'] = twig_ensure_traversable($_exig_);
             foreach ($context['_seq'] as $context["_key"] => $context["exigence"]) {
                 // line 18
                 echo "                    <li>\t<a href=\"#\">Exigence ";
-                echo twig_escape_filter($this->env, $this->getAttribute($context["exigence"], "type", array()), "html", null, true);
+                if (isset($context["exigence"])) { $_exigence_ = $context["exigence"]; } else { $_exigence_ = null; }
+                echo twig_escape_filter($this->env, $this->getAttribute($_exigence_, "type", array()), "html", null, true);
                 echo "</a>
 
                     <ul>
                           <li>\t<a href=\"";
                 // line 21
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("VExigence_add", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "vBesoin"), "method"), "idExig" => $this->getAttribute($context["exigence"], "id", array()))), "html", null, true);
+                if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+                if (isset($context["exigence"])) { $_exigence_ = $context["exigence"]; } else { $_exigence_ = null; }
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("VExigence_add", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"), "vBesoin" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "vBesoin"), "method"), "idExig" => $this->getAttribute($_exigence_, "id", array()))), "html", null, true);
                 echo "\">
                                        <span>Ajouter une nouvelle version </span></a>
                                    <span class=\"glyphicon glyphicon-pencil\"></span></a>
@@ -73,8 +78,9 @@ class __TwigTemplate_cec5249ac9af346118c257311158e52394cd0ee61cca90ca0d0e9802392
                         
                         ";
                 // line 27
+                if (isset($context["exigence"])) { $_exigence_ = $context["exigence"]; } else { $_exigence_ = null; }
                 $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["exigence"], "version", array()));
+                $context['_seq'] = twig_ensure_traversable($this->getAttribute($_exigence_, "version", array()));
                 foreach ($context['_seq'] as $context["_key"] => $context["version"]) {
                     // line 28
                     echo "                            
@@ -83,7 +89,8 @@ class __TwigTemplate_cec5249ac9af346118c257311158e52394cd0ee61cca90ca0d0e9802392
                         
                                 <li>\t<a href=\"#\">";
                     // line 32
-                    if (($this->getAttribute($context["version"], "curent", array()) == "true")) {
+                    if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                    if (($this->getAttribute($_version_, "curent", array()) == "true")) {
                         echo " 
                             <span class=\"label label-success\">Nouveau</span>
                            
@@ -93,13 +100,16 @@ class __TwigTemplate_cec5249ac9af346118c257311158e52394cd0ee61cca90ca0d0e9802392
                         echo "<span class=\"label label-danger\">Ancien</span>";
                     }
                     echo " <span class=\"glyphicon glyphicon-time\"></span>";
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["version"], "date", array()), "d/m/y"), "html", null, true);
+                    if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($_version_, "date", array()), "d/m/y"), "html", null, true);
                     echo "
                                         <span style=\"margin-left: 20%\">déficulter :  ";
                     // line 36
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["version"], "def", array()), "html", null, true);
+                    if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                    echo twig_escape_filter($this->env, $this->getAttribute($_version_, "def", array()), "html", null, true);
                     echo "</span > <span style=\"margin-left:72%\">périorité :  ";
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["version"], "perio", array()), "html", null, true);
+                    if (isset($context["version"])) { $_version_ = $context["version"]; } else { $_version_ = null; }
+                    echo twig_escape_filter($this->env, $this->getAttribute($_version_, "perio", array()), "html", null, true);
                     echo "</span>
                                         <br/><br/><label>ksjfsjksfj</label><br/><br/>
                                     
@@ -179,6 +189,6 @@ class __TwigTemplate_cec5249ac9af346118c257311158e52394cd0ee61cca90ca0d0e9802392
 
     public function getDebugInfo()
     {
-        return array (  148 => 64,  143 => 62,  134 => 56,  124 => 52,  100 => 36,  93 => 35,  86 => 32,  80 => 28,  76 => 27,  67 => 21,  60 => 18,  56 => 17,  48 => 12,  40 => 8,  37 => 7,  31 => 4,  28 => 3,  19 => 2,);
+        return array (  158 => 64,  153 => 62,  144 => 56,  134 => 52,  108 => 36,  100 => 35,  92 => 32,  86 => 28,  81 => 27,  70 => 21,  62 => 18,  57 => 17,  48 => 12,  40 => 8,  37 => 7,  31 => 4,  28 => 3,  19 => 2,);
     }
 }

@@ -25,9 +25,11 @@ class __TwigTemplate_1f3579006dad9a6c09d8e1d98a50004aef013433555964dd37d9491b0ee
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        $context["role"] = twig_split_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user", array()), "roles", array()), 0, array(), "array"), "_");
+        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+        $context["role"] = twig_split_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($_app_, "user", array()), "roles", array()), 0, array(), "array"), "_");
         // line 2
-        $context["roles"] = twig_lower_filter($this->env, $this->getAttribute($this->getContext($context, "role"), 1, array(), "array"));
+        if (isset($context["role"])) { $_role_ = $context["role"]; } else { $_role_ = null; }
+        $context["roles"] = twig_lower_filter($this->env, $this->getAttribute($_role_, 1, array(), "array"));
         // line 3
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
@@ -64,7 +66,8 @@ class __TwigTemplate_1f3579006dad9a6c09d8e1d98a50004aef013433555964dd37d9491b0ee
                     <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
                         <i class=\"fa fa-user fa-fw\"></i> ";
         // line 23
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user", array()), "nom", array()), "html", null, true);
+        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($_app_, "user", array()), "nom", array()), "html", null, true);
         echo " <i class=\"fa fa-caret-down\"></i>
                     </a>
                     <ul class=\"dropdown-menu dropdown-user\">
@@ -149,6 +152,6 @@ class __TwigTemplate_1f3579006dad9a6c09d8e1d98a50004aef013433555964dd37d9491b0ee
 
     public function getDebugInfo()
     {
-        return array (  136 => 56,  133 => 55,  128 => 53,  120 => 40,  113 => 58,  111 => 55,  108 => 54,  106 => 53,  90 => 40,  75 => 28,  67 => 23,  56 => 15,  42 => 5,  36 => 4,  32 => 3,  30 => 2,  28 => 1,  22 => 3,);
+        return array (  139 => 56,  136 => 55,  131 => 53,  123 => 40,  116 => 58,  114 => 55,  111 => 54,  109 => 53,  93 => 40,  78 => 28,  69 => 23,  58 => 15,  44 => 5,  38 => 4,  34 => 3,  31 => 2,  28 => 1,  22 => 3,);
     }
 }

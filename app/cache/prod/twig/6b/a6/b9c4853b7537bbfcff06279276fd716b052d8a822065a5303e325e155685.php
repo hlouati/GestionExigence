@@ -35,20 +35,25 @@ class __TwigTemplate_6ba6b9c4853b7537bbfcff06279276fd716b052d8a822065a5303e325e1
     <div id=\"traces-text\" class=\"trace\" style=\"display: none;\">
 <pre>";
         // line 13
+        if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "exception"), "toarray", array()));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($_exception_, "toarray", array()));
         foreach ($context['_seq'] as $context["i"] => $context["e"]) {
             // line 14
             echo "[";
-            echo twig_escape_filter($this->env, ($context["i"] + 1), "html", null, true);
+            if (isset($context["i"])) { $_i_ = $context["i"]; } else { $_i_ = null; }
+            echo twig_escape_filter($this->env, ($_i_ + 1), "html", null, true);
             echo "] ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["e"], "class", array()), "html", null, true);
+            if (isset($context["e"])) { $_e_ = $context["e"]; } else { $_e_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_e_, "class", array()), "html", null, true);
             echo ": ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["e"], "message", array()), "html", null, true);
+            if (isset($context["e"])) { $_e_ = $context["e"]; } else { $_e_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_e_, "message", array()), "html", null, true);
             echo "
 ";
             // line 15
-            $this->env->loadTemplate("TwigBundle:Exception:traces.txt.twig")->display(array("exception" => $context["e"]));
+            if (isset($context["e"])) { $_e_ = $context["e"]; } else { $_e_ = null; }
+            $this->env->loadTemplate("TwigBundle:Exception:traces.txt.twig")->display(array("exception" => $_e_));
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['i'], $context['e'], $context['_parent'], $context['loop']);
@@ -72,6 +77,6 @@ class __TwigTemplate_6ba6b9c4853b7537bbfcff06279276fd716b052d8a822065a5303e325e1
 
     public function getDebugInfo()
     {
-        return array (  57 => 16,  51 => 15,  42 => 14,  38 => 13,  33 => 10,  26 => 5,  24 => 4,  19 => 1,);
+        return array (  62 => 16,  55 => 15,  43 => 14,  38 => 13,  33 => 10,  26 => 5,  24 => 4,  19 => 1,);
     }
 }

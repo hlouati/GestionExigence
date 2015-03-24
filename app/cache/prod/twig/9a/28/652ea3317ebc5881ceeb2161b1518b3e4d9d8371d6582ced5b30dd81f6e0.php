@@ -16,13 +16,16 @@ class __TwigTemplate_9a28652ea3317ebc5881ceeb2161b1518b3e4d9d8371d6582ced5b30dd8
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        if (twig_length_filter($this->env, $this->getAttribute($this->getContext($context, "exception"), "trace", array()))) {
+        if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
+        if (twig_length_filter($this->env, $this->getAttribute($_exception_, "trace", array()))) {
             // line 2
+            if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "exception"), "trace", array()));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($_exception_, "trace", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["trace"]) {
                 // line 3
-                $this->env->loadTemplate("TwigBundle:Exception:trace.txt.twig")->display(array("trace" => $context["trace"]));
+                if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+                $this->env->loadTemplate("TwigBundle:Exception:trace.txt.twig")->display(array("trace" => $_trace_));
                 // line 4
                 echo "
 ";
@@ -45,6 +48,6 @@ class __TwigTemplate_9a28652ea3317ebc5881ceeb2161b1518b3e4d9d8371d6582ced5b30dd8
 
     public function getDebugInfo()
     {
-        return array (  27 => 4,  25 => 3,  21 => 2,  19 => 1,);
+        return array (  30 => 4,  27 => 3,  22 => 2,  19 => 1,);
     }
 }

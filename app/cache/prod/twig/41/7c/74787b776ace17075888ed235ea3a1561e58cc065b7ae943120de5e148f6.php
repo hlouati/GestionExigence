@@ -65,32 +65,38 @@ class __TwigTemplate_417c74787b776ace17075888ed235ea3a1561e58cc065b7ae943120de5e
     <tbody>
         ";
         // line 25
+        if (isset($context["listUser"])) { $_listUser_ = $context["listUser"]; } else { $_listUser_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "listUser"));
+        $context['_seq'] = twig_ensure_traversable($_listUser_);
         foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
             // line 26
             echo "      <tr>
  
         <td> <span class=\"name\"> ";
             // line 28
-            echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "nom", array()), "html", null, true);
+            if (isset($context["u"])) { $_u_ = $context["u"]; } else { $_u_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_u_, "nom", array()), "html", null, true);
             echo "</a></span></td>
         <td class=\"hidden-phone\">  ";
             // line 29
-            echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "prenom", array()), "html", null, true);
+            if (isset($context["u"])) { $_u_ = $context["u"]; } else { $_u_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_u_, "prenom", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">";
             // line 30
-            echo twig_escape_filter($this->env, $this->getAttribute($context["u"], "email", array()), "html", null, true);
+            if (isset($context["u"])) { $_u_ = $context["u"]; } else { $_u_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_u_, "email", array()), "html", null, true);
             echo "</td>
         <td class=\"hidden-phone\">";
             // line 31
+            if (isset($context["u"])) { $_u_ = $context["u"]; } else { $_u_ = null; }
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["u"], "roles", array()));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($_u_, "roles", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
                 // line 32
                 echo "      ";
-                echo twig_escape_filter($this->env, $context["role"], "html", null, true);
+                if (isset($context["role"])) { $_role_ = $context["role"]; } else { $_role_ = null; }
+                echo twig_escape_filter($this->env, $_role_, "html", null, true);
                 echo "
       ";
             }
@@ -152,6 +158,6 @@ class __TwigTemplate_417c74787b776ace17075888ed235ea3a1561e58cc065b7ae943120de5e
 
     public function getDebugInfo()
     {
-        return array (  140 => 56,  137 => 55,  132 => 57,  130 => 55,  124 => 51,  101 => 33,  92 => 32,  88 => 31,  84 => 30,  80 => 29,  76 => 28,  72 => 26,  68 => 25,  54 => 13,  51 => 12,  45 => 9,  38 => 7,  32 => 3,  29 => 2,  20 => 1,);
+        return array (  146 => 56,  143 => 55,  138 => 57,  136 => 55,  130 => 51,  107 => 33,  97 => 32,  92 => 31,  87 => 30,  82 => 29,  77 => 28,  73 => 26,  68 => 25,  54 => 13,  51 => 12,  45 => 9,  38 => 7,  32 => 3,  29 => 2,  20 => 1,);
     }
 }

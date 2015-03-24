@@ -16,12 +16,15 @@ class __TwigTemplate_34f989aab1f7a0d5a2fa5c8afeafab2715cf6ccbfbb4d0cbb4ad66f3a54
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        if ($this->getAttribute($this->getContext($context, "trace"), "function", array())) {
+        if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+        if ($this->getAttribute($_trace_, "function", array())) {
             // line 2
             echo "    at ";
-            echo (($this->getAttribute($this->getContext($context, "trace"), "class", array()) . $this->getAttribute($this->getContext($context, "trace"), "type", array())) . $this->getAttribute($this->getContext($context, "trace"), "function", array()));
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo (($this->getAttribute($_trace_, "class", array()) . $this->getAttribute($_trace_, "type", array())) . $this->getAttribute($_trace_, "function", array()));
             echo "(";
-            echo $this->env->getExtension('code')->formatArgsAsText($this->getAttribute($this->getContext($context, "trace"), "args", array()));
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo $this->env->getExtension('code')->formatArgsAsText($this->getAttribute($_trace_, "args", array()));
             echo ")
 ";
         } else {
@@ -30,12 +33,15 @@ class __TwigTemplate_34f989aab1f7a0d5a2fa5c8afeafab2715cf6ccbfbb4d0cbb4ad66f3a54
 ";
         }
         // line 6
-        if (($this->getAttribute($this->getContext($context, "trace", true), "file", array(), "any", true, true) && $this->getAttribute($this->getContext($context, "trace", true), "line", array(), "any", true, true))) {
+        if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+        if (($this->getAttribute($_trace_, "file", array(), "any", true, true) && $this->getAttribute($_trace_, "line", array(), "any", true, true))) {
             // line 7
             echo "        in ";
-            echo $this->getAttribute($this->getContext($context, "trace"), "file", array());
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo $this->getAttribute($_trace_, "file", array());
             echo " line ";
-            echo $this->getAttribute($this->getContext($context, "trace"), "line", array());
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo $this->getAttribute($_trace_, "line", array());
             echo "
 ";
         }
@@ -53,6 +59,6 @@ class __TwigTemplate_34f989aab1f7a0d5a2fa5c8afeafab2715cf6ccbfbb4d0cbb4ad66f3a54
 
     public function getDebugInfo()
     {
-        return array (  35 => 7,  33 => 6,  29 => 4,  21 => 2,  19 => 1,);
+        return array (  39 => 7,  36 => 6,  32 => 4,  22 => 2,  19 => 1,);
     }
 }

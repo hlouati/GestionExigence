@@ -67,31 +67,37 @@ class __TwigTemplate_c0126fac96ca794b7b313024fcce3fe2f87648239e0633850906b127df2
        <div class=\"modal-body\">
        ";
         // line 24
-        $this->env->getExtension('form')->renderer->setTheme($this->getContext($context, "form"), array(0 => "::formLayout.html.twig"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        $this->env->getExtension('form')->renderer->setTheme($_form_, array(0 => "::formLayout.html.twig"));
         // line 25
         echo "     
         <form method=\"post\" ";
         // line 26
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'enctype');
         echo ">
         <div class=\"row\">
         <div class=\"col-sm-3\">";
         // line 28
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "name", array()), 'label', array("label" => "nom"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "name", array()), 'label', array("label" => "nom"));
         echo "</div>
         <div class=\"col-sm-6\"> ";
         // line 29
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "name", array()), 'widget');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "name", array()), 'widget');
         echo "</div>
         </div></br>
         <div class=\"row\">
         <div class=\"col-sm-3\"> ";
         // line 32
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "file", array()), 'label', array("label" => "fichier"));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "file", array()), 'label', array("label" => "fichier"));
         echo "</div>
         <div class=\"col-sm-6\">  ";
         // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "file", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($_form_, "file", array()), 'widget', array("attr" => array("cols" => "40", "rows" => "10")));
         echo "</div>
         </div>
         </br>
@@ -103,12 +109,14 @@ class __TwigTemplate_c0126fac96ca794b7b313024fcce3fe2f87648239e0633850906b127df2
          <button type=\"submit\" class=\"btn btn-primary\">Ajouter</button>
          <a href=\" ";
         // line 42
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Besoin_list", array("idprojet" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
+        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("Besoin_list", array("idprojet" => $this->getAttribute($this->getAttribute($_app_, "request", array()), "get", array(0 => "idprojet"), "method"))), "html", null, true);
         echo "\" class=\"btn btn-default\">Fermer</a>
        </div>
        ";
         // line 44
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
+        if (isset($context["form"])) { $_form_ = $context["form"]; } else { $_form_ = null; }
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($_form_, 'rest');
         echo " 
          </form>
      </div><!-- /.modal-content -->
@@ -129,6 +137,6 @@ class __TwigTemplate_c0126fac96ca794b7b313024fcce3fe2f87648239e0633850906b127df2
 
     public function getDebugInfo()
     {
-        return array (  111 => 44,  106 => 42,  94 => 33,  90 => 32,  84 => 29,  80 => 28,  75 => 26,  72 => 25,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
+        return array (  118 => 44,  112 => 42,  99 => 33,  94 => 32,  87 => 29,  82 => 28,  76 => 26,  73 => 25,  70 => 24,  63 => 20,  48 => 8,  44 => 7,  40 => 6,  36 => 5,  30 => 3,  27 => 2,  18 => 1,);
     }
 }
