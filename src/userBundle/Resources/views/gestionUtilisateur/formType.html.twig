@@ -1,0 +1,63 @@
+{% extends ['userBundle:gestionUtilisateur:home.html.twig']%}
+{% block modal%}
+          <!-- Modal -->
+ <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" >
+            <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
+             <link rel="stylesheet" type="text/css" href="{{asset('font-awesome/css/font-awesome.css')}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin.css')}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-theme.min.css')}}" />
+               <script type="text/javascript" src="{{asset('js/jquery-1.10.2.js')}}"></script>
+                <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+                <script type="text/javascript" src="{{asset('js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+                <script type="text/javascript" src="{{asset('js/sb-admin.js')}}"></script>  
+
+ <script type="text/javascript">
+ $(document).ready(function() {
+   $('#myModal').modal({
+    show: true,
+   })
+ });
+</script>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       </div>
+       <div class="modal-body">
+
+    
+
+    <div class="form-group">
+        
+       
+        <div class="list-group">
+             <a href="" class="list-group-item list-group-item-info">Choisir type utilisateur</a>
+            <a href="{{ path('user_add', { 'type': 'Directeur' }) }}" class="list-group-item">Directeur</a>
+            <a href="{{ path('user_add', { 'type': 'ChefProjet' }) }}" class="list-group-item ">Chef de projet</a>
+        <a href="{{ path('user_add', { 'type': 'RepClient' }) }}" class="list-group-item">Réprésentant Client</a>
+        <a href="{{ path('user_add', { 'type': 'InterClient' }) }}" class="list-group-item ">Intervenant Client</a>
+       <a href="{{ path('user_add', { 'type': 'InterCap' }) }}" class="list-group-item ">Intervenant Capgemeni</a>
+    
+        </div>  
+            
+            
+            
+        
+    </div>
+
+      
+       <div class="modal-footer">
+         </div>
+        
+     </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+ </div><!-- /.modal -->
+ </div> 
+    {% endblock %}
+        
+
+
+ 
+
+   

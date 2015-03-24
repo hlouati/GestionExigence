@@ -1,0 +1,33 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  ×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               Add Modal title<br />
+               <input type="text">
+            </h4>
+         </div>
+         <div class="modal-body">
+         Add text below<br />
+            <textarea name="textarea" style="width:250px;height:150px;"></textarea>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">Close
+            </button>
+            <button type="button" class="btn btn-primary">
+               Submit changes
+            </button>
+         </div>
+      </div>
+</div>
+<script>
+   $(function () { $('#myModal').modal({
+      keyboard: true
+   })});
+</script>

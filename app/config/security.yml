@@ -1,0 +1,73 @@
+# you can read more about security in the related section of the documentation
+# http://symfony.com/doc/current/book/security.html
+security:
+    # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        userBundle\Entity\User: plaintext
+
+
+    # http://symfony.com/doc/current/book/security.html#hierarchical-roles
+    role_hierarchy:
+        ROLE_INTERCLIENT: ROLE_USER
+        ROLE_INTERCAP  : ROLE_USER
+        ROLE_CHEFPROJET: ROLE_INTERCAP
+        ROLE_REPCLIENT: ROLE_INTERCLIENT
+        ROLE_CLIENT: [ROLE_REPCLIENT,ROLE_INTERCLIENT]
+        ROLE_DIRECTEUR: [ROLE_CHEFPROJET]
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory:
+            memory:
+                users:
+                    intercap:  { password: userpass, roles: [ 'ROLE_INTERCAP' ] }
+                    interclient:  { password: userpass, roles: [ 'ROLE_INTERCLIENT' ] }
+                    repclient:  { password: userpass, roles: [ 'ROLE_REPCLIENT' ] }
+                    chefprojet:  { password: chefpass, roles: [ 'ROLE_CHEFPROJET' ] }
+                    directeur: { password: adminpass, roles: [ 'ROLE_DIRECTEUR' ] }
+                    user: { password: userpass, roles: [ 'ROLE_USER' ] }
+        main:
+            entity: { class: userBundle\Entity\User, property:username }
+            
+
+    # the main part of the security, where you can set up firewalls
+    # for specific sections of your app
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        # the login page has to be accessible for everybody
+        demo_login:
+            pattern:  ^/demo/secured/login$
+            security: false
+        
+        main:
+            pattern: ^/
+            anonymous: true 
+            provider: main 
+
+            form_login:
+                login_path: user_login
+                check_path: user_login_check
+                default_target_path: /projets
+                always_use_default_target_path: true
+            logout:
+                path: user_logout
+                target: /login
+                
+             
+
+    
+
+      
+    # with these settings you can restrict or allow access for different parts
+    # of your application based on roles, ip, host or methods
+    # http://symfony.com/doc/current/cookbook/security/access_control.html
+    access_control:
+       - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/, role: ROLE_USER}
+       
+       
+        

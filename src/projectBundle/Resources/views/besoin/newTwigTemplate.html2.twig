@@ -1,0 +1,110 @@
+{# empty Twig template #}
+{% extends ['userBundle:dashboard:dashboard.html.twig']%}
+    {% block Containtname %}
+            <br/>
+            <a href="{{ path('Besoin_add', {'idprojet': app.request.get('idprojet') })}}">
+                <span>Ajouter un nouveau besoin </span></a>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <br/><br/>
+       
+    {% endblock %}
+    {% block Containt %}
+       
+       
+<!-- CUSTOM BOOTSTRAP ELEMENT -->
+ 
+
+    
+            <div class="panel-group ng-scope" id="accordion">
+        {% for besoin in verBesoin %}
+                
+         <div class="panel panel-default" style="display: block;">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{besoin.id}}">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-3">{{besoin.nom}} </div>
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-3">Version <span class="badge">{{besoin.version.count}}</span> </div>
+                                <div class="col-sm-3"><span class="label-info pull-right">View <i class="fa fa-angle-double-down"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{besoin.id}}" class="panel-collapse collapse">
+                  
+         
+                     
+                    {% for version in besoin.version %}
+                        <div class="panel-body">
+                            
+                            
+                            {% if version.curent=='true'%} 
+                            <span class="label label-success">Nouveau</span>
+                           
+                            {% else%}<span class="label label-danger">Ancien</span>{%endif%} 
+                            {{version.descp}}<br/><br/>Rédiger le :{{version.date|date('d/m/y')}} par <span class="glyphicon glyphicon-user"></span> {{version.redact.getNom}}
+                            {% if version.curent=='true'%} 
+                             <br/>
+                                <a href="{{ path('Doc_add', {'idprojet': app.request.get('idprojet') ,'vBesoin':version.id})}}">
+                                       <span>Attacher un fichier</span></a>
+                                   <span class="glyphicon glyphicon-upload"></span>
+                                 <br/>
+                                
+                                 <a href="{{ path('Exigence_add', {'idprojet': app.request.get('idprojet') ,'vbesoin':version.getBesoin.getId})}}">
+                                       <span>Ajouter une exigence </span></a>
+                                   <span class="glyphicon glyphicon-book"></span>
+                                 <br/>  
+                                  <br/>
+                                  
+                                  <a href="{{ path('Vbesoin_add', {'idprojet': app.request.get('idprojet') ,'idbesoin':version.getBesoin.getId})}}">
+                                       <span>Ajouter une nouvelle version </span></a>
+                                   <span class="glyphicon glyphicon-pencil"></span>
+                                
+ 
+                            {%endif%}
+                            
+                      </div>
+                    {%endfor%}
+                   
+                 
+            </div>
+        </div>
+      {%endfor%}
+    </div>
+
+         
+        
+<script type="text/javascript">
+
+
+</script>
+ <style type="text/css">
+
+    </style> 
+        <script>
+        $(document).ready(function(){
+$("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+    
+    $("[data-toggle=tooltip]").tooltip();
+});    
+            
+            
+        </script>    
+    {% endblock %}    
+    
+    
+    

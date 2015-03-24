@@ -1,0 +1,44 @@
+<div class="table-responsive ">
+        <table class="table table-hover table-striped" height="180">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nom</th>
+              <th>Description</th>
+              <th>Rédacteur</th>
+              <th>Date de rédaction</th>
+              
+            </tr>
+          </thead>
+      
+          <tbody id="myTable">
+             
+                {%for v in version %}
+            <tr>
+              <td><div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">             
+                +
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Ajouter version</a></li>
+                  <li><a href="#">liste des version </a></li>
+                  
+                </ul>
+              </div></td>
+              <td>{{v.nom}}</td>
+              <td>{{v.descp}}</td>
+              <td>{{v.redact}}</td>
+              <td>{{v.date|date("m/d/Y") }}</td>
+       
+            </tr>
+            {% endfor %}
+           
+           
+            
+          </tbody>
+        </table>   
+      </div>
+                     
+      <div class="col-md-12 text-center">
+      <ul class="pagination" id="myPager"></ul>
+      </div>

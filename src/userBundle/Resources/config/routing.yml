@@ -1,0 +1,21 @@
+user_login:
+    path:     /login
+    defaults: { _controller: userBundle:User:login }
+user_login_check:
+    path:     /login_check 
+user_logout:
+    path:     /logout
+    defaults: { _controller: userBundle:User:logout }
+user_dashboard:
+    path:     /dashboard
+    defaults: { _controller: userBundle:User:dashboard }
+user_table:
+    path:     /dashboard/table
+    defaults: { _controller: userBundle:User:table }
+user_gestion:
+    path:     /utilisateur
+    defaults: { _controller: userBundle:User:list }
+user_add:
+    path:     /utilisateur/ajouter
+    defaults: { _controller: userBundle:User:add}
+

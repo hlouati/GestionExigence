@@ -1,0 +1,63 @@
+{% extends ['userBundle:dashboard:dashboard.html.twig']%}
+{% block Containtname %}
+    <br/>
+    <span><a href='' >Accueil</a></span> > <span><a href='' >Liste utilisateur</a></span>   
+<br/>
+<br/>
+           {% if is_granted('ROLE_DIRECTEUR') %} <a href="{{ path('user_add')}}">
+                <span>Ajouter un nouveau utilisateur</span></a>{% endif %}
+            <span class="glyphicon glyphicon-plus"></span>
+            <br/><br/>
+    {% endblock %}
+    {% block Containt %}
+ <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+    <thead>
+      <tr>
+        <th style="width:10%" class="hidden-phone">Nom</th>
+        <th style="width:10%" class="hidden-phone">Prenom</th>
+        <th style="width:10%" class="hidden-phone">Email</td>
+        <th style="width:10%" class="hidden-phone">Role</td>
+        <th style="width:1%" class="hidden-phone">Action</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+        {% for u in listUser %}
+      <tr>
+ 
+        <td> <span class="name"> {{u.nom}}</a></span></td>
+        <td class="hidden-phone">  {{u.prenom}}</td>
+        <td class="hidden-phone">{{u.email}}</td>
+        <td class="hidden-phone">{% for role in u.roles %}
+      {{ role }}
+      {% endfor %} </td>
+        <td class="hidden-phone">
+              <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Supprimer</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+        
+      </tr>
+      {%endfor%}
+        
+    </tbody>
+  </table>
+       
+        {% block modal%}
+            {%endblock%}
+
+    {% endblock %}    
+    
+    
+        
+    
+    

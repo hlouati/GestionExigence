@@ -1,0 +1,38 @@
+{% extends "::empty.html.twig" %}
+
+{% block menulayout %}  
+
+<li>
+<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Gestion projets<span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level">
+        <li>
+        <a href="{{ path('projet_add')}}"><i class="fa  fa-plus-circle fa-fw"></i> Nouveau projet</a>
+        </li>
+        <li>
+        <a href="{{ path('project_list')}}" ><i class="fa fa-list-alt fa-fw"></i> Liste projets</a>
+        </li>
+        <li>
+        <a href="{{ path('projet_archive')}}"><i class="fa  fa-archive fa-fw"></i> Archive</a>
+        </li>
+    </ul>
+</li>
+
+<li>
+<a href="#"><i class="fa  fa-file-text fa-fw"></i> Gestion Client<span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level">
+        <li>
+        <a href="{{ path('Client_list') }}" ><i class="fa fa-list-alt fa-fw"></i> Fiche clients</a>
+        </li>
+        <li>
+        <a href="{{ path('Client_add') }}" ><i class="fa  fa-plus-circle fa-fw"></i> Nouveau client</a>
+        </li>
+    </ul>
+</li>        
+<li>
+<a href="{{ path('user_gestion')}}"><i class="fa fa-users fa-fw"></i> Gestion des comptes</a>
+</li>
+                        
+                    
+         
+{% endblock%} 
+

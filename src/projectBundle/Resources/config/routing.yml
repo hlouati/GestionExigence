@@ -1,0 +1,59 @@
+project_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: projectBundle:Default:index }
+
+project_list:
+    path:     /projets
+    defaults: { _controller: projectBundle:Default:listProject }
+Projet_inter:
+    path:     /projet/intervenant/idprojet={idprojet}
+    defaults: { _controller: projectBundle:Default:Projetinter }
+Projet_interCl:
+    path:     /projet/intervenant/ajouter/intercl/idprojet={idprojet}
+    defaults: { _controller: projectBundle:Default:ProjetinterCl }
+    
+Projet_interCap:
+    path:     /projet/intervenant/ajouter/intercap/idprojet={idprojet}
+    defaults: { _controller: projectBundle:Default:ProjetinterCap }    
+    
+Besoin_list:
+    path:     /projet/besoin/projet={idprojet}
+    defaults: { _controller: projectBundle:Default:listBesoin }  
+
+Besoin_add:
+    path:     /projet/besoin/ajouter/projet={idprojet}
+    defaults: { _controller: projectBundle:Default:addBesoin }      
+Vbesoin_add:
+    path:     /projet/besoin/version/ajouter/projet={idprojet}/b={idbesoin}
+    defaults: { _controller: projectBundle:Default:addVersionBesoin } 
+Doc_add:
+    path:     /projet/besoin/version/doc/projet={idprojet}/vBesoin={vBesoin}
+    defaults: { _controller: projectBundle:Default:upload}      
+
+Exigence_add:
+    path:     /projet/exigence/ajouter/projet={idprojet}/vBesoin={vBesoin}
+    defaults: { _controller: projectBundle:Default:addExigence}      
+
+Exigence_list:
+    path:     /projet/exigence/projet={idprojet}/vBesoin={vBesoin}
+    defaults: { _controller: projectBundle:Default:listExigence }
+       
+projet_add:
+    path:     /projet/ajouter
+    defaults: { _controller: projectBundle:Default:addProject }
+
+projet_archive:
+    path:     /projet/archiver
+    defaults: { _controller: projectBundle:Default:achiverProjet }    
+
+VExigence_add:
+    path:     /projet/exigence/version/ajouter/projet={idprojet}/vBesoin={vBesoin}/idExig={idExig}
+    defaults: { _controller: projectBundle:Default:addVexigence}
+    
+Client_add:
+    path:     /projet/client/ajouter
+    defaults: { _controller: projectBundle:Default:addClient}    
+    
+Client_list:
+    path:     /projet/client/
+    defaults: { _controller: projectBundle:Default:listClient}     

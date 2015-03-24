@@ -1,0 +1,6 @@
+profile_homepage:
+    path:     /dashbord
+    defaults: { _controller: profileBundle:Default:index }
+profile_voir:
+    path:     /profile
+    defaults: { _controller: profileBundle:Default:index }

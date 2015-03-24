@@ -1,0 +1,62 @@
+   
+{% extends ['userBundle:dashboard:dashboard.html.twig']%}
+{% block Containtname %}
+    <br/>
+    <span><a href='{{ path('project_list')}}' >Accueil</a></span> > <span><a href='' >Liste projet</a></span>   
+<br/>
+<br/>
+           {% if is_granted('ROLE_DIRECTEUR') %} <a href="{{ path('projet_add')}}"><span>Ajouter un nouveau projet</span></a> <span class="glyphicon glyphicon-plus"></span><br/><br/>{% endif %}
+                
+           
+            
+    {% endblock %}
+    {% block Containt %}
+ <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+    <thead>
+      <tr>
+        <th style="width:10%" class="hidden-phone">Titre</th>
+        <th style="width:20%" class="hidden-phone">Déscription</th>
+        <th style="width:10%" class="hidden-phone">client</th>
+     {% if is_granted('ROLE_CHEFPROJET') %}    <th style="width:7%" class="hidden-phone">Intervenant</th>{%endif%}
+       {% if is_granted('ROLE_DIRECTEUR') %}   <th style="width:1%" class="hidden-phone">Action</th>{%endif%}
+     
+      </tr>
+    </thead>
+    <tbody>
+    
+       {% for projet in u%}
+      <tr>
+        
+        <td> <span class="name"><a href="{{ path('Besoin_list', {'idprojet':projet.id})}}">   {{projet.nom}}</a></span></td>
+        <td class="hidden-phone">  {{projet.description}}</td>
+        <td class="hidden-phone">{{projet.client.getRsocial()}}</td>
+       {% if is_granted('ROLE_CHEFPROJET') %}  <td class="hidden-phone"><a href="{{ path('Projet_inter', {'idprojet':projet.id})}}">liste des intervenants</a></td>{%endif%}
+        {% if is_granted('ROLE_DIRECTEUR') %}<td class="hidden-phone">
+              <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Archiver</a>
+              </li>
+            </ul>
+          </div>
+        </td>{%endif%}
+        
+      </tr>
+      {%endfor%}
+        
+    </tbody>
+  </table>
+       
+        {% block modal%}
+            {%endblock%}
+
+    {% endblock %}    
+    
+    
+        
+    

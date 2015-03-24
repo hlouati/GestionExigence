@@ -1,0 +1,86 @@
+{# empty Twig template #}
+{% extends ['userBundle:dashboard:dashboard.html.twig']%}
+    {% block Containtname %}
+            
+    
+    {% endblock %}
+    {% block Containt %}
+        {% if is_granted('ROLE_INTERCAP') %}   
+  <div class="tree">
+    <ul>
+        
+        <li>	 <a href="{{ path('Exigence_add', {'idprojet': app.request.get('idprojet') ,'vBesoin':app.request.get('vBesoin')})}}">
+                                       <span>Ajouter une nouvelle exigence   </span></a>
+                                   <span class="glyphicon glyphicon-pencil"></span></a> 
+                                  
+            <ul> 
+                {% for exigence in exig  %}
+                    <li>	<a href="#">Exigence {{exigence.type}}</a>
+
+                    <ul>
+                          <li>	<a href="{{ path('VExigence_add', {'idprojet': app.request.get('idprojet') ,'vBesoin': app.request.get('vBesoin'),'idExig':exigence.id})}}">
+                                       <span>Ajouter une nouvelle version </span></a>
+                                   <span class="glyphicon glyphicon-pencil"></span></a>
+                                
+                            <ul>
+                        
+                        {% for version in exigence.version  %}
+                            
+                            
+                     
+                        
+                                <li>	<a href="#">{% if version.curent=='true'%} 
+                            <span class="label label-success">Nouveau</span>
+                           
+                            {% else%}<span class="label label-danger">Ancien</span>{%endif%} <span class="glyphicon glyphicon-time"></span>{{version.date|date('d/m/y')}}
+                                        <span style="margin-left: 20%">déficulter :  {{version.def}}</span > <span style="margin-left:72%">périorité :  {{version.perio}}</span>
+                                        <br/><br/><label>ksjfsjksfj</label><br/><br/>
+                                    
+                                    <span class="glyphicon glyphicon-user"style="margin-left: 80%">hamdi</span> 
+                                        </a>
+                                        
+                                               
+                                           
+                                  
+                 
+                                    
+                       
+                               
+                    
+                           
+                        {%endfor%}
+                         </ul>
+                        </li>
+                    </ul>
+                </li>
+              {%endfor%}  
+            </ul>
+        </li>
+    </ul>
+</div>
+ 
+ {% else%}                 
+            <div class="alert alert-danger" role="alert">Vous avez pas les droits</div>      
+ {% endif%} 
+     
+     
+<script type="text/javascript">
+
+$(function () {
+    $('.tree li').hide();
+    $('.tree li:first').show();
+    $('.tree li').on('click', function (e) {
+        var children = $(this).find('> ul > li');
+        if (children.is(":visible")) children.hide('fast');
+        else children.show('fast');
+        e.stopPropagation();
+    });
+});
+
+
+</script>
+
+    {% endblock %}    
+    
+    
+    

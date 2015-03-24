@@ -1,0 +1,55 @@
+{% extends ['userBundle:gestionUtilisateur:modal.html.twig']%}
+{% block modal%}
+    {% set listUser=''%} 
+          <!-- Modal -->
+          <script type="text/javascript" src="{{asset('js/jquery-1.10.2.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" >
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
+ <script type="text/javascript">
+ $(document).ready(function() {
+   $('#myModal').modal({
+        show: true,
+   })
+ });
+</script>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <a href="{{ path('user_gestion')}}" class="close" >&times;</a>
+         <h4 class="modal-title" id="myModalLabel">Ajouter version Besoin</h4>
+       </div>
+       <div class="modal-body">
+       {% form_theme form '::formLayout.html.twig' %}
+     
+        <form method="post" {{ form_enctype(form) }}>
+        <div class="row">
+        <div class="col-sm-3">{{ form_label(form.nom, "Nom :") }}</div>
+        <div class="col-sm-6"> {{ form_widget(form.nom) }}</div>
+        </div></br>
+        <div class="row">
+        <div class="col-sm-3"> {{ form_label(form.descp, "Déscription :") }}</div>
+        <div class="col-sm-6">  {{ form_widget(form.descp,{ 'attr': {'cols': '40','rows':'10'} }) }}</div>
+        </div>
+        </br>
+        
+     
+                </br>       
+     </div>
+       <div class="modal-footer">
+         <button type="submit" class="btn btn-primary">Ajouter</button>
+         <a href="{{ path('Besoin_list', {'idprojet': app.request.get('idprojet') })}}" class="btn btn-default">Fermer</a>
+       </div>
+       {{ form_rest(form) }} 
+         </form>
+     </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+ </div><!-- /.modal -->
+    {% endblock %}
+        
+
+
+ 
+
+   {# empty Twig template #}
